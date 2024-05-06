@@ -9,8 +9,8 @@ const app = express()
 app.set('port', process.env.Port || 8080);
 
 /*middleWare*/
-app.use(express.static(__dirname + '/public'));
-app.use(morgan('dev'));
+app.use(express.static(__dirname + '/public')); //static 파일 연결
+app.use(morgan('dev')); //logger api, request와 response를 포매팅해 콘솔 로그 찍음
 app.use(cookieParser('secret@1234'));
 app.use(session({
     secret: 'secret@1234', //암호화
@@ -20,8 +20,8 @@ app.use(session({
         httpOnly: true, //자바스크립트 접근금지 기능, 로그인 구현 시 필수 적용
     }
 }))
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.json()); //요청정보 파싱 및 req.body로 접근 가능(req.body가 json 형태일 때)
+app.use(express.urlencoded({extended: true})); //요청정보 파싱 및 req.body로 접근 가능(req.body가 폼에 대한 요청 형태일 때)
 app.use(function(err,req,res,next) {
     console.error(err.stack);
     res.status(500).send('Something broke!')
