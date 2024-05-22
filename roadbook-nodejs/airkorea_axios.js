@@ -40,7 +40,7 @@ app.get('/airkorea', async(req,res)=>{
             const badAir = [];
             if (airItem.pm10 <= 30) {
                 badAir.push('좋음');
-            } else if (pm10 > 30 && pm10 <= 80){
+            } else if (airItem.pm10 > 30 && airItem.pm10 <= 80){
                 badAir.push('보통');
             } else {
                 badAir.push('나쁨');
@@ -48,7 +48,7 @@ app.get('/airkorea', async(req,res)=>{
 
             if (airItem.pm25 <= 15) {
                 badAir.push('좋음');
-            } else if (pm25 > 15 && pm10 <= 35){
+            } else if (airItem.pm25 > 15 && airItem.pm10 <= 35){
                 badAir.push('보통');
             } else {
                 badAir.push('나쁨');
