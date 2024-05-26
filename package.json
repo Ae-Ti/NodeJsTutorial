@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "uuid-apikey": "^1.5.3"
+  }
+}
