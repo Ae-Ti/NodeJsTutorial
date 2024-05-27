@@ -1,17 +1,25 @@
 const morgan = require('morgan');
 const url = require('url');
 const uuidAPIkey = require('uuid-apikey');
+const cors = require('cors');
 
+const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
+
+dotenv.config();
 
 app.set('port', process.env.PORT || 8080);
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
+app.use(cors());
 
-const key = process.env.apikey;
+const key = {
+    apiKey: 'BVQF85X-BM5M2WP-HFFPPPG-79KZ9BM',
+    uuid: '5eeef417-5d0b-4172-8bdf-6b5a3a67f4ae'
+  };
 
 let boardList = [];
 let numOfBoard = 0;
