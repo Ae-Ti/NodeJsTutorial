@@ -1,2 +1,3 @@
 roadbook-nodejs/node_modules/
 roadbook-nodejs/.env
+roadbook-nodejs\sequelize\config\config.json

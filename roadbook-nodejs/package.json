@@ -18,9 +18,14 @@
     "express": "^4.19.2",
     "express-session": "^1.18.0",
     "morgan": "^1.10.0",
+    "mysql2": "^3.9.8",
     "redis": "^4.6.13",
     "request": "^2.88.2",
-    "uuid-apikey": "^1.5.3"
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2",
+    "socket.io": "^4.7.5",
+    "uuid-apikey": "^1.5.3",
+    "ws": "^8.17.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
