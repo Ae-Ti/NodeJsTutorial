@@ -6,8 +6,7 @@ module.exports = (server) => {
     io.on("connection", (socket) => {
         const req = socket.request;
         const ip = req.headers["x-forwarded-for"] || req.connection.remoteAddress;
-        console.log(`New Client: ${ip}, socket.id : ${socket.id}`
-        );
+        console.log(`New Client: ${ip}, socket.id : ${socket.id}`);
     
         socket.on("disconnect", () => {
             console.log(`Client Out : ${ip}, socket.id : ${socket.id}`);
@@ -23,6 +22,6 @@ module.exports = (server) => {
         socket.interval = setInterval(() => {
             socket.emit("from server", "Message From Server");
         }, 3000);
-    })
+    });
 };
 
